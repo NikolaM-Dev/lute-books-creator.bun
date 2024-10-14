@@ -1,6 +1,5 @@
 export class Book {
-  private static readonly BOOKS_PATH =
-    '/home/nikola/Documents/english/lute/books';
+  private static readonly BOOKS_PATH = Bun.env.BOOKS_PATH;
   private static readonly RAW_BOOKS_PATH = './raw-books';
 
   static async bookExists(bookName: string): Promise<void> {
