@@ -1,5 +1,5 @@
 {
-  "name": "lute-books-creator",
+  "name": "lute-books-creator.bun",
   "module": "index.ts",
   "type": "module",
   "scripts": {
