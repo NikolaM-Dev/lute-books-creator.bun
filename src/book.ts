@@ -10,4 +10,16 @@ export class Book {
 
     if (!exists) throw new Error('Book does not exist');
   }
+
+  static async getStringBook(bookName: string): Promise<string> {
+    const path = `${this.RAW_BOOKS_PATH}/${bookName}`;
+    const file = Bun.file(path);
+
+    try {
+      return await file.text();
+    } catch (error) {
+      console.error(error);
+      throw new Error('Error reading file');
+    }
+  }
 }
