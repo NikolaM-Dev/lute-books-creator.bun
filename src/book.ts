@@ -22,4 +22,15 @@ export class Book {
       throw new Error('Error reading file');
     }
   }
+
+  static async saveBook(bookName: string, bookContent: string): Promise<void> {
+    const path = `${this.BOOKS_PATH}/${bookName}`;
+
+    try {
+      await Bun.write(path, bookContent);
+    } catch (error) {
+      console.error(error);
+      throw new Error('Error writing file');
+    }
+  }
 }
