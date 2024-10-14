@@ -33,4 +33,8 @@ export class Book {
       throw new Error('Error writing file');
     }
   }
+
+  static formatBook(bookContent: string): string {
+    return bookContent.replaceAll('\n', '\n\n');
+  }
 }
